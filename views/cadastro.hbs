@@ -25,17 +25,20 @@
         <h2>Faça seu cadastro</h2>
         <div class="form-group">
           <label for="name">Nome completo</label>
-          <input type="text" class="form-control" id="name">
+          <input type="text" class="form-control" id="name" name="name">
+          <span class="text-muted" style="color: red;" id="name-alert"></span>
         </div>
 
         <div class="form-group">
-          <label for="lastname">Email</label>
-          <input type="text" class="form-control" id="lastname" placeholder="email@exemplo.com">
+          <label for="email">Email</label>
+          <input type="text" class="form-control" id="email" name="email" placeholder="email@exemplo.com">
+          <span class="text-muted" style="color: red;" id="mail-alert"></span>
         </div>
 
         <div class="form-group">
           <label for="cpf">CPF</label>
-          <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00">
+          <input type="text" class="form-control" id="cpf" name="cpf" placeholder="000.000.000-00">
+          <span class="text-muted" style="color: red;" id="cpf-alert"></span>
         </div>
 
         <button class="btn btn-primary" id="gotop2">Próximo</button>
@@ -45,16 +48,20 @@
 
 
       <div class="land second-land">
-        <span></span>
-        <h3>Bem-vindo(a)</h3>
-        <p>Nós queremos te conhecer melhor. Para isso nos ajude fornecendo mais algumas informações. É rapidinho</p>
+        <h3>Essa parte é muito importante</h3>
+        <p>Crie uma senha forte e não a compartilhe com ninguém. A senha deve conter no mínimo 8 caracteres</p>
+
         <div class="form-group">
-          <label for="cnpj">CNPJ</label>
-          <input type="text" class="form-control" id="cnpj" placeholder="000.000.000-00">
+          <label for="pass">Crie uma senha</label>
+          <input type="password" id="pass" name="password" class="form-control" placeholder="********">
+        </div>
+
+        <div class="form-group">
+          <label for="pass_r">Repita a senha</label>
+          <input type="password" id="pass_r" class="form-control" placeholder="********">
         </div>
 
         <button class="btn btn-primary" id="gotop3">Próximo</button>
-        <p><a>Não possuo CNPJ :(</a></p>
       </div>
 
       <div class="land third-land">
@@ -89,18 +96,14 @@
       </div>
 
       <div class="land fourth-land">
-        <h3>Essa parte é muito importante</h3>
-        <p>Crie uma senha forte e não a compartilhe com ninguém. A senha deve conter no mínimo 8 caracteres</p>
-
+        <span></span>
+        <h3>Bem-vindo(a)</h3>
+        <p>Nós queremos te conhecer melhor. Para isso nos ajude fornecendo mais algumas informações. É rapidinho</p>
         <div class="form-group">
-          <label for="pass">Crie uma senha</label>
-          <input type="password" id="pass" class="form-control" placeholder="********">
+          <label for="cnpj">CNPJ</label>
+          <input type="text" class="form-control" id="cnpj" name="cnpj" placeholder="000.000.000-00">
         </div>
-
-        <div class="form-group">
-          <label for="pass_r">Repita a senha</label>
-          <input type="password" id="pass_r" class="form-control" placeholder="********">
-        </div>
+        <p><a>Não possuo CNPJ :(</a></p>
 
         <button type="submit" class="btn btn-primary">Cadastrar</button>
       </div>
@@ -114,7 +117,7 @@
     integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
     crossorigin="anonymous"></script>
 
-  <script src="scripts/main.js"></script>
+  <script src="scripts/cadastro.js"></script>
 </body>
 
 </html>
