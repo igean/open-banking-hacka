@@ -1,13 +1,17 @@
 const primary_land = document.querySelector('.primary-land')
 const second_land = document.querySelector('.second-land')
-const third_land = document.querySelector('.third-land')
-const fourth_land = document.querySelector('.fourth-land')
 const gotop2 = document.querySelector('#gotop2')
-const gotop3 = document.querySelector('#gotop3')
-const gotop4 = document.querySelector('#gotop4')
+const send = document.querySelector('form')
 
-gotop2.addEventListener('click', (e) => {
-    e.preventDefault()
+// $.ajax({
+//     url: "https://www.receitaws.com.br/v1/cnpj/04918341000100",
+//     type: "GET",
+//     crossDomain: true,
+//     dataType: "jsonp",
+//     success: (data) => {console.log(data)}
+// })
+
+gotop2.addEventListener('click', () => {
 
     // VALIDAÇÃO DO FORMULARIO
     const name = document.querySelector('#name')
@@ -31,23 +35,18 @@ gotop2.addEventListener('click', (e) => {
     }
 })
 
-gotop3.addEventListener('click', (e) => {
-    e.preventDefault()
+send.addEventListener('submit', (e) => {
 
-    second_land.style.transform = "translateX(-100%)"
-    second_land.style.opacity = "0"
-    third_land.style.opacity = "1"
-    third_land.style.pointerEvents = "all"
+    const pass = document.querySelector('#pass')
+    const r_pass = document.querySelector('#pass_r')
+
+    if (pass.value !== r_pass.value) {
+        document.querySelector('#pass_alert').innerText = 'As senhas não coincidem'
+        e.preventDefault()
+    } 
+    
+    if (pass.value.length < 8) {
+        document.querySelector('#pass_alert').innerText = 'A senha deve conter pelo menos 8 caracteres'
+        e.preventDefault()
+    }
 })
-
-gotop4.addEventListener('click', (e) => {
-    e.preventDefault()
-
-    third_land.style.transform = "translateX(-100%)"
-    third_land.style.opacity = "0"
-    fourth_land.style.opacity = "1"
-    fourth_land.style.pointerEvents = "all"
-})
-
-const pass = document.querySelector('#pass')
-const r_pass = document.querySelector('#pass_r')

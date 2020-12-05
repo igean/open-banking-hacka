@@ -41,7 +41,7 @@
           <span class="text-muted" style="color: red;" id="cpf-alert"></span>
         </div>
 
-        <button class="btn btn-primary" id="gotop2">Próximo</button>
+        <button type="button" class="btn btn-primary" id="gotop2">Próximo</button>
 
         <p><small>Já possui uma conta? Clique <a href="/login">aqui</a></small></p>
       </div>
@@ -60,52 +60,9 @@
           <label for="pass_r">Repita a senha</label>
           <input type="password" id="pass_r" class="form-control" placeholder="********">
         </div>
+        <span class="text-muted" id="pass_alert"></span>
 
-        <button class="btn btn-primary" id="gotop3">Próximo</button>
-      </div>
-
-      <div class="land third-land">
-        <h3>Maravilha</h3>
-        <p>Isso é o que encontramos sobre você o seu negócio. Essas informações estão corretas?</p>
-        <div class="card">
-          <div>
-            <h5 class="card-subtitle text-muted">Nome:</h5>
-            <p>Felipe Simeão de Souza & Cia Ltda</p>
-          </div>
-          <div>
-            <h5 class="card-subtitle text-muted">CNPJ:</h5>
-            <p>00.000.000/0000-00</p>
-          </div>
-          <div>
-            <h5 class="card-subtitle text-muted">Atividade principal:</h5>
-            <p>Manutenção de eletrodomésticos</p>
-          </div>
-          <div>
-            <h5 class="card-subtitle text-muted">Telefone:</h5>
-            <p>(00) 9 0000-0000</p>
-          </div>
-          <div>
-            <h5 class="card-subtitle text-muted">CNAE:</h5>
-            <p>00000</p>
-          </div>
-        </div>
-
-        <button class="btn btn-primary" id="gotop4">Está correto</button>
-        <button class="btn btn-warning">Está incorreto</button>
-        <p class="text-muted">* Não se preocupe. Não compartilharemos seus dados com ninguém sem a sua permissão</p>
-      </div>
-
-      <div class="land fourth-land">
-        <span></span>
-        <h3>Bem-vindo(a)</h3>
-        <p>Nós queremos te conhecer melhor. Para isso nos ajude fornecendo mais algumas informações. É rapidinho</p>
-        <div class="form-group">
-          <label for="cnpj">CNPJ</label>
-          <input type="text" class="form-control" id="cnpj" name="cnpj" placeholder="000.000.000-00">
-        </div>
-        <p><a>Não possuo CNPJ :(</a></p>
-
-        <button type="submit" class="btn btn-primary">Cadastrar</button>
+        <button type="submit" class="btn btn-primary" id="send">Cadastrar</button>
       </div>
     </form>
   </div>
@@ -116,6 +73,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
     crossorigin="anonymous"></script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
   <script src="scripts/cadastro.js"></script>
 </body>
