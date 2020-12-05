@@ -9,7 +9,11 @@ app
 .use(express.static('public'))
 
 .get('/cadastro', (req, res) => {
-    return res.render('index')
+    return res.render('cadastro')
+})
+
+.get('/login', (req, res) => {
+    return res.render('login')
 })
 
 .listen(process.env.PORT)

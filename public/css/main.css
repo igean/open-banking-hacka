@@ -1,53 +1,60 @@
-header {
+.container {
+    padding-top: 10vh;
+}
+
+ header {
     position: absolute;
     background-color: blueviolet;
     width: 100%;
-    height: 15vh;
+    height: 10vh;
     color: F0F0F0;
 
     display: flex;
     align-items: center;
-
-    padding: 0 2rem;
 }
 
-.container {
-    padding-top: 20vh;
+h1 {
+    font-size: 1.5rem;
+    margin-left: 1rem;
 }
 
 h2 {
-    margin: 3rem 0 2rem;
+    margin-top: 3rem;
 }
 
 form {
-    width: 50%;
-    margin: auto;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
 }
 
-.form-group {
-    width: 80%;
+.land {
+    grid-row: 1/3;
+    grid-column: 1/3;
+    transition: .5s;
 }
 
-@media (max-width: 576px) {
-    header {
-        height: 10vh;
-    }
-
-    .container  {
-        padding-top: 10vh;
-    }
-
-    form {
-        width: 100%;
-    }
-
-    .form-group {
-        margin: auto;
-    }
+p {
+    margin-top: 10px;
 }
 
-@media (max-width: 768px) {
-    .form-group {
-        width: 100%;
-    }
+.second-land {
+    opacity: 0;
+    pointer-events: none;
+    text-align: center;
+}
+
+.second-land .form-group {
+    margin-top: 7rem;
+}
+
+.third-land {
+    opacity: 0;
+    pointer-events: none;
+    text-align: center;
+}
+
+.fourth-land {
+    opacity: 0;
+    pointer-events: none;
 }
