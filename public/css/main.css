@@ -24,6 +24,8 @@ h2, h3 {
 
 form {
     display: grid;
+    width: 90%;
+    margin: auto;
     grid-template-columns: 100%;
     grid-template-rows: 100%;
 }
