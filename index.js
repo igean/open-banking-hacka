@@ -12,4 +12,4 @@ app
     return res.render('index')
 })
 
-.listen('3000')
+.listen(process.env.PORT)
