@@ -37,10 +37,10 @@ const cadastro = (req, res) => {
                 '${req.body.cpf}',
                 '${req.body.email}',
                 '${req.body.password}'
-            );
-        `).then(
-            () => {return res.send(req.body)}
-        )
+            )
+        `)
+
+        return res.send('hehehe')
     })
 
 }
