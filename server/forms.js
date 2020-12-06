@@ -9,9 +9,8 @@ const pool = new Pool({
   }
 });
 
-
+pool.connect()
 const cadastro = (req, res) => {
-    pool.connect()
     pool.query(`SELECT * FROM users WHERE cpf='${req.body.cpf}'`).then(
         results => {
             if (results.rows.length > 0) {
