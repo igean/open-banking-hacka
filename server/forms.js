@@ -53,8 +53,8 @@ const login = (req, res, next) => {
         } else {
             bcrypt.compare(req.body.password, r.rows[0].password).then(e => {
                 if (e === true) {
+                    const nome = r.rows[0].name
                     next()
-                    return;
                 } else {
                     return res.send('Senha incorreta')
                 }

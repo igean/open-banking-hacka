@@ -55,7 +55,7 @@ app
 .post('/login', login)
 
 .get('/inicio', (req, res) => {
-    return res.render('dashboard')
+    return res.render('dashboard', {nome})
 })
 
 .get('/solicitar-credito', (req, res) => {
