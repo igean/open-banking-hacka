@@ -20,9 +20,9 @@
 <body>
     <header>
         <h1>Filipe Souza</h1>
-        <span>232.323.001-76</span>
+        <p>232.323.001-76</p>
     </header>
-    <div class="container">
+    <div class="container selected" id="land-page">
         <div id="pic"></div>
 
         <p>Sua pontuação é de 720. Isso significa que consideramos seu perfil acima do esperado. Isso irá facilitar para que consiga seu crédito com as melhores condições.</p>
@@ -39,30 +39,44 @@
             </div>
 
             <div class="empresa">
-                <strong class="text-muted">Nome:</strong>
-                <p>EMPRESA y</p>
+                <strong class="text-muted">Segmento:</strong>
+                <p>Segmento da empresa</p>
             </div>
 
             <div class="empresa">
-                <strong class="text-muted">Nome:</strong>
-                <p>EMPRESA Z</p>
+                <strong class="text-muted">Dados da empresa</strong>
+                <p>Dados</p>
             </div>
         </div>
 
+        <button class="btn btn-primary">Solicitação de Crédito</button>
+
+    </div>
+
+
+    <div id="courses-page" class="container">
+        <p>Te recomendamos fazer estes cursos para progredir ainda mais com seu negócio. E só pra lembrar, cada curso feito poderá aumentar um pouquinho seu score</p>
+
+        <div class="courses">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
     </div>
 
     <footer class="footer">
-        <div class="option">
+        <div class="option" id="credit">
             <i class="fas fa-money-check-alt"></i>
-            <small class="text-muted">Financeiro</small>
+            <small class="text-muted">Crédito</small>
         </div>
-        <div class="option">
+        <div class="option" id="education">
             <i class="fas fa-book"></i>
             <small class="text-muted">Educação</small>
-        </div>
-        <div class="option" id="user">
-            <i class="fas fa-user"></i>
-            <small class="text-muted">Perfil</small>
         </div>
     </footer>
 
@@ -73,6 +87,36 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
+
+    <script>
+        const credit = document.querySelector('#credit')
+        const educ = document.querySelector('#education')
+        const land_page = document.querySelector('#land-page')
+        const courses_page = document.querySelector('#courses-page')
+
+        credit.addEventListener('click', (e) => {
+            if (land_page.classList.contains('selected')) {
+                e.preventDefault()
+            } else {
+                land_page.classList.add('selected')
+                courses_page.classList.remove('selected')
+                credit.style.color = 'blue'
+                educ.style.color = 'black'
+            }
+        })
+
+        educ.addEventListener('click', (e) => {
+            if (courses_page.classList.contains('selected')) {
+                e.preventDefault()
+            } else {
+                courses_page.classList.add('selected')
+                land_page.classList.remove('selected')
+                educ.style.color = 'blue'
+                credit.style.color = 'black'
+            }
+        })
+
+    </script>
 </body>
 
 </html>
