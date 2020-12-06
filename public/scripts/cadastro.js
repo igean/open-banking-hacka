@@ -3,14 +3,6 @@ const second_land = document.querySelector('.second-land')
 const gotop2 = document.querySelector('#gotop2')
 const send = document.querySelector('form')
 
-// $.ajax({
-//     url: "https://www.receitaws.com.br/v1/cnpj/04918341000100",
-//     type: "GET",
-//     crossDomain: true,
-//     dataType: "jsonp",
-//     success: (data) => {console.log(data)}
-// })
-
 gotop2.addEventListener('click', () => {
 
     // VALIDAÇÃO DO FORMULARIO
