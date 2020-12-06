@@ -26,6 +26,10 @@ app
     return res.render('cnpj')
 })
 
+.get('/pesquisa-sobre-perfil', (req, res) => {
+    return res.render('perfil-investidor')
+})
+
 .post('/login', login)
 
 .listen(process.env.PORT)
