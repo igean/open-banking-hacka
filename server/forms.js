@@ -43,6 +43,7 @@ const cadastro = (req, res) => {
                 return res.send('Cadastrado com sucesso')
             })
         })
+
 }
 
 const login = (req, res) => {
