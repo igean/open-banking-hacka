@@ -18,31 +18,31 @@ const cadastro = (req, res) => {
             if (results.rows.length > 0) {
                 return res.send('Encontramos um usuário cadastrado com esse cpf')
             }
-
-            bcrypt.hash(req.body.password, 20, (err, hash) => {
-                if (err) {
-                    return res.send(err)
-                }
-
-                req.body.password = hash
-
-                pool.query(`
-                    INSERT INTO users (
-                        name,
-                        cpf,
-                        email,
-                        password
-                    ) VALUES (
-                        '${req.body.name}',
-                        '${req.body.cpf}',
-                        '${req.body.email}',
-                        '${req.body.password}'
-                    );
-                `)
-
-                return res.send('Cadastrado com sucesso')
-            })
         })
+
+    bcrypt.hash(req.body.password, 10, (err, hash) => {
+        if (err) {
+            return res.send(err)
+        }
+
+        req.body.password = hash
+
+        pool.query(`
+            INSERT INTO users (
+                name,
+                cpf,
+                email,
+                password
+            ) VALUES (
+                '${req.body.name}',
+                '${req.body.cpf}',
+                '${req.body.email}',
+                '${req.body.password}'
+            );
+        `)
+
+        return res.send(req.body)
+    })
 
 }
 
