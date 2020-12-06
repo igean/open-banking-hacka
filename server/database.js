@@ -10,13 +10,5 @@ const pool = new Pool({
 pool.connect();
 
 pool.query(`
-    CREATE TABLE IF NOT EXISTS users(
-        id SERIAL PRIMARY KEY,
-        name VARCHAR(200),
-        cpf VARCHAR(200),
-        cnpj VARCHAR(200),
-        password VARCHAR
-    );
-`)
-
-module.exports = pool
+    SELECT * FROM users;
+`).then(r => console.log(r.rows))

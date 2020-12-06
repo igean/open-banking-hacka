@@ -1,5 +1,16 @@
 const bcrypt = require('bcrypt')
-const pool = require('./database')
+
+const { Pool } = require('pg');
+
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
+
+pool.connect();
+
 
 const cadastro = (req, res) => {
     bcrypt.hash(req.body.password, 30, (err, hash, next) => {
