@@ -1,0 +1,75 @@
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 23vh;
+}
+
+#pic {
+    height: 8rem;
+    width: 8rem;
+    background: #CCC;
+    border-radius: 50%;
+    position: absolute;
+    top: 18vh;
+}
+
+.container {
+    max-width: 90%;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 15rem 0 8rem;
+}
+
+.progress {
+    width: 100%;
+}
+
+.point-bar {
+    position: relative;
+    background: linear-gradient(90deg, #FF0000 0%, #ffee00 25%, #b3ff00 60%, #00ff1e 110%);
+    color: #000;
+    font-size: 1rem;
+}
+
+.point-bar strong {
+    position: absolute;
+    right: 27%;
+}
+
+.card {
+    width: 80%;
+    margin-top: 2rem;
+}
+
+.option {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.option:hover {
+    background: #d5d5d5;
+}
+
+#user {
+    color: blue;
+}
+
+footer {
+    height: 3rem;
+    width: 100%;
+    background: #F0F0F0;
+    position: fixed;
+    bottom: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}

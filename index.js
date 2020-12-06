@@ -30,6 +30,10 @@ app
     return res.render('perfil-investidor')
 })
 
+.get('/inicio', (req, res) => {
+    return res.render('dashboard')
+})
+
 .post('/login', login)
 
 .listen(process.env.PORT)
