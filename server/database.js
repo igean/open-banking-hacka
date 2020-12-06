@@ -10,7 +10,7 @@ const pool = new Pool({
 pool.connect();
 
 pool.query(`
-    CREATE TABLE [IF NOT EXISTS] users(
+    CREATE TABLE IF NOT EXISTS users(
         id SERIAL PRIMARY KEY,
         name VARCHAR(200),
         cpf VARCHAR(200),
