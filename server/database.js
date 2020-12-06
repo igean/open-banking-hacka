@@ -1,4 +1,5 @@
 const { Pool } = require('pg');
+const bcrypt = require('bcrypt')
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
@@ -10,12 +11,7 @@ const pool = new Pool({
 pool.connect();
 
 pool.query(`
-    CREATE TABLE users (
-        id SERIAL PRIMARY KEY,
-        name VARCHAR(200),
-        cpf VARCHAR(200),
-        email VARCHAR(200),
-        cnpj VARCHAR(200),
-        password VARCHAR(200)
-    )
-`)
+    SELECT * FROM users WHERE id=1;
+`).then(r => {
+  console.log(bcrypt.compare('geanpaiva', r.rows.password))
+})
