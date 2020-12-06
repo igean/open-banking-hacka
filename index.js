@@ -34,6 +34,14 @@ app
     return res.render('dashboard')
 })
 
+.get('/solicitar-credito', (req, res) => {
+    return res.render('solicitar-credito')
+})
+
+.get('/status-da-solicitacao-de-credito',(req, res) => {
+    return res.render('status-solicitacao')
+})
+
 .post('/login', login)
 
 .listen(process.env.PORT)

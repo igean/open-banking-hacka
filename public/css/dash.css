@@ -2,6 +2,8 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    text-align: center;
     height: 23vh;
 }
 
@@ -50,9 +52,8 @@ body {
 }
 
 .card {
-    min-width: 40%;
-    min-height: 20%;
     margin-top: 2rem;
+    width: 90%;
 }
 
 .option {
@@ -120,4 +121,22 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-around;
+}
+
+@media (min-width:546px) {
+    #land-page .card {
+        width: 50%;
+    }
+
+    .progress {
+        width: 60%;
+    }
+
+    p {
+        width: 60%;
+    }
+
+    .card p {
+        width: auto;
+    }
 }
