@@ -13,13 +13,17 @@ pool.connect();
 
 
 const cadastro = (req, res) => {
-    pool.query(`SELECT * FROM users WHERE email='${req.body.cpf}'`).then(
+    pool.query(`SELECT * FROM users WHERE cpf='${req.body.cpf}'`).then(
         results => {
             if (results.rows.length > 0) {
                 return res.send('Encontramos um usuário cadastrado com esse cpf')
             }
 
             bcrypt.hash(req.body.password, 20, (err, hash) => {
+                if (err) {
+                    return res.send(err)
+                }
+
                 req.body.password = hash
 
                 pool.query(`
@@ -33,7 +37,7 @@ const cadastro = (req, res) => {
                         '${req.body.cpf}',
                         '${req.body.email}',
                         '${req.body.password}'
-                    )
+                    );
                 `)
 
                 return res.send('Cadastrado com sucesso')
@@ -42,7 +46,7 @@ const cadastro = (req, res) => {
 }
 
 const login = (req, res) => {
-
+    res.send('teste')
 }
 
 module.exports = {cadastro, login}
