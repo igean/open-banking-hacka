@@ -16,10 +16,14 @@ app
     return res.render('cadastro')
 })
 
-.post('/cadastro', cadastro)
-
 .get('/login', (req, res) => {
     return res.render('login')
+})
+
+.post('/cadastro', cadastro)
+
+.get('/cnpj', (req, res) => {
+    return res.render('cnpj')
 })
 
 .post('/login', login)
