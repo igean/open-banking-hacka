@@ -39,13 +39,23 @@ const cadastro = (req, res, next) => {
             )
         `)
 
-        next()
+        return res.send('cadastrado')
     })
 
 }
 
 const login = (req, res) => {
-    res.send('teste')
+    pool.query(`
+        SELECT * FROM users WHERE cpf='${req.body.cpf}'
+    `).then(r => {
+        if (r.rows.length < 1) {
+            return res.send('Usuário não cadastrado')
+        } else {
+            if (bcrypt.compare(req.body.password, r.rows.password) == true) {
+                return res.send('Logado')
+            }
+        }
+    })
 }
 
 module.exports = {cadastro, login}
