@@ -51,7 +51,7 @@ const login = (req, res) => {
         if (r.rows.length < 1) {
             return res.send('Usuário não cadastrado')
         } else {
-            if (bcrypt.compare(req.body.password, r.rows.password) == true) {
+            if (bcrypt.compare(req.body.password, r.rows.password)) {
                 return res.send('Logado')
             }
         }
