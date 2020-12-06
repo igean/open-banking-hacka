@@ -39,9 +39,9 @@ const cadastro = (req, res) => {
                 '${req.body.email}',
                 '${req.body.password}'
             );
-        `)
-
-        return res.send(req.body)
+        `).then(
+            () => {return res.send(req.body)}
+        )
     })
 
 }
