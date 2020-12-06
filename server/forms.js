@@ -10,7 +10,7 @@ const pool = new Pool({
 });
 
 pool.connect()
-const cadastro = (req, res) => {
+const cadastro = (req, res, next) => {
     pool.query(`SELECT * FROM users WHERE cpf='${req.body.cpf}'`).then(
         results => {
             if (results.rows.length > 0) {
@@ -39,7 +39,7 @@ const cadastro = (req, res) => {
             )
         `)
 
-        return res.send('hehehe')
+        next()
     })
 
 }
