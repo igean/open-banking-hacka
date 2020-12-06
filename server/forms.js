@@ -13,22 +13,32 @@ pool.connect();
 
 
 const cadastro = (req, res) => {
-    bcrypt.hash(req.body.password, 30, (err, hash, next) => {
-        if (err) {
-            return res.status(400).send('erro')
-        }
+    pool.query(`SELECT * FROM users WHERE email='${req.body.cpf}'`).then(
+        results => {
+            if (results.rows.length > 0) {
+                return res.send('Encontramos um usuário cadastrado com esse cpf')
+            }
 
-        pool.query(`
-            INSERT INTO users (name, cpf, password)
-            VALUE (
-                ${req.body.name},
-                ${req.body.name},
-                ${hash}
-            );
-        `).then(
-            next()
-        )
-    })
+            bcrypt.hash(req.body.password, 20, (err, hash) => {
+                req.body.password = hash
+
+                pool.query(`
+                    INSERT INTO users (
+                        name,
+                        cpf,
+                        email,
+                        password
+                    ) VALUES (
+                        '${req.body.name}',
+                        '${req.body.cpf}',
+                        '${req.body.email}',
+                        '${req.body.password}'
+                    )
+                `)
+
+                return res.send('Cadastrado com sucesso')
+            })
+        })
 }
 
 const login = (req, res) => {
