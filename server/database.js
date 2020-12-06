@@ -10,10 +10,12 @@ const pool = new Pool({
 pool.connect();
 
 pool.query(`
-    INSERT INTO users (name, cpf, email, password)
-    VALUES ('teste', 'teste', 'teste', 'teste')
-`).then(
-    pool.query(`
-        SELECT * FROM users;
-    `).then(r => console.log(r.rows))
-)
+    CREATE TABLE users (
+        id SERIAL PRIMARY KEY,
+        name VARCHAR(200),
+        cpf VARCHAR(200),
+        email VARCHAR(200),
+        cnpj VARCHAR(200),
+        password VARCHAR(200)
+    )
+`)
