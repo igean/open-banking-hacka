@@ -1,4 +1,8 @@
 const bcrypt = require('bcrypt')
+const express = require('express')
+const app = express()
+
+
 
 const { Pool } = require('pg');
 
@@ -39,12 +43,11 @@ const cadastro = (req, res) => {
             )
         `)
 
-        return res.send('cadastrado')
+        return res.redirect('/cnpj')
     })
-
 }
 
-const login = (req, res, next) => {
+const login = (req, res) => {
     pool.query(`
         SELECT * FROM users WHERE cpf='${req.body.cpf}'
     `).then(r => {
@@ -53,7 +56,6 @@ const login = (req, res, next) => {
         } else {
             bcrypt.compare(req.body.password, r.rows[0].password).then(e => {
                 if (e === true) {
-                    const nome = r.rows[0].name
                     return res.redirect('/inicio')
                 } else {
                     return res.send('Senha incorreta')
