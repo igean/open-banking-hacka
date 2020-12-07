@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/dash.css">
 
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
     <title>EmpreCrédito | Início</title>
 </head>
@@ -26,10 +27,59 @@
         <h2>Status da solicitação</h2>
         <p>Os seguintes parceiros estão fazendo oferta de crédito para você</p>
 
-        <button class="btn" style="background: rgb(255, 167, 5); width:50%">Itaú</button>
-        <button class="btn" style="background:yellow; width:50%">BB</button>
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Nome</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <a href="#" class="btn btn-primary">Ver proposta</a>
+            </div>
+        </div>
     </div>
 
 </body>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<script>
+    $.ajax({
+        url: 'https://platform-api.obaf.banfico.com/api/aspsps?forms=false',
+        type: "GET",
+        crossDomain: true,
+        dataType: "jsonp",
+        success: (data) => {
+            data.providers.forEach(e => {
+                var descricao = e.description
+                var logo = e.logo
+                var nome = e.name
+
+                const card = document.createElement('div')
+                const img = document.createElement('img')
+                const conteudo = document.createElement('div')
+                const titulo = document.createElement('h5')
+                const desc = document.createElement('p')
+                const button = document.createElement('a')
+
+                card.classList.add('card')
+                img.classList.add('card-img-top')
+
+                conteudo.classList.add('card-body')
+                titulo.classList.add('card-title')
+                img.classList.add('card-card-text')
+                button.classList.add('btn btn-primary')
+
+                document.querySelector('.container').appendChild(card)
+            })
+        }
+    })
+</script>
 
 </html>
