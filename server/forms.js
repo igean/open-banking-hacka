@@ -42,9 +42,9 @@ const cadastro = (req, res) => {
                 '${req.body.password}'
             )
         `)
-
-        return res.redirect('/cnpj')
     })
+
+    return res.redirect('/cnpj')
 }
 
 const login = (req, res) => {
