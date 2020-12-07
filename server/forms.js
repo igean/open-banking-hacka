@@ -56,7 +56,7 @@ const login = (req, res) => {
         } else {
             bcrypt.compare(req.body.password, r.rows[0].password).then(e => {
                 if (e === true) {
-                    return res.render('/logado')
+                    return res.redirect('/inicio')
                 } else {
                     return res.send('Senha incorreta')
                 }
