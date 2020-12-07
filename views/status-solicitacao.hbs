@@ -23,16 +23,24 @@
         <h1>Filipe Souza</h1>
         <p>232.323.001-76</p>
     </header>
-    <div class="container">
+    <div class="container" style="padding-top: 17vh;">
         <h2>Status da solicitação</h2>
         <p>Os seguintes parceiros estão fazendo oferta de crédito para você</p>
 
-        <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
+        <div class="card col-md-6" style="width: 18rem;">
+            <img src="https://media-exp1.licdn.com/dms/image/C4D0BAQEHe95ExdBYhA/company-logo_200_200/0?e=2159024400&v=beta&t=nQGHV1vDgxogJtgQzIPahAJeH92GfCiF9Y9a-fNgqnU" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">Nome</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
+                <h5 class="card-title">AUT Bank</h5>
+                <p class="card-text">AUT Bank Sandbox</p>
+                <a href="#" class="btn btn-primary">Ver proposta</a>
+            </div>
+        </div>
+
+        <div class="card col-md-6" style="width: 18rem;">
+            <img src="https://s3-eu-west-1.amazonaws.com/psd2e/client-logo/mybank-obie.svg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">OBIE Bank</h5>
+                <p class="card-text">OBIE Bank Sandbox</p>
                 <a href="#" class="btn btn-primary">Ver proposta</a>
             </div>
         </div>
@@ -48,38 +56,5 @@
     integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
     crossorigin="anonymous"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-<script>
-    $.ajax({
-        url: 'https://platform-api.obaf.banfico.com/api/aspsps?forms=false',
-        type: "GET",
-        crossDomain: true,
-        dataType: "jsonp",
-        success: (data) => {
-            data.providers.forEach(e => {
-                var descricao = e.description
-                var logo = e.logo
-                var nome = e.name
-
-                const card = document.createElement('div')
-                const img = document.createElement('img')
-                const conteudo = document.createElement('div')
-                const titulo = document.createElement('h5')
-                const desc = document.createElement('p')
-                const button = document.createElement('a')
-
-                card.classList.add('card')
-                img.classList.add('card-img-top')
-
-                conteudo.classList.add('card-body')
-                titulo.classList.add('card-title')
-                img.classList.add('card-card-text')
-                button.classList.add('btn btn-primary')
-
-                document.querySelector('.container').appendChild(card)
-            })
-        }
-    })
-</script>
 
 </html>
