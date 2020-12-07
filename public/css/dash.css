@@ -56,12 +56,12 @@ body {
     width: 90%;
 }
 
-.option {
+/* .option {
     display: flex;
     flex-direction: column;
     text-align: center;
     justify-content: center;
-}
+} */
 
 .option:hover {
     background: #d5d5d5;
@@ -77,6 +77,10 @@ body {
 
 #courses-page p {
     width: 80%;
+}
+
+.courses .card {
+    width: 20rem;
 }
 
 #courses-page.selected {
@@ -100,16 +104,7 @@ body {
     overflow: hidden;
 }
 
-.courses {
-    display: grid;
-    grid-template-columns: 25% 25% 25%;
-    grid-gap: 5rem;
-}
 
-.courses .card {
-    width: 10rem;
-    height: 10rem;
-}
 
 footer {
     height: 3rem;
@@ -124,9 +119,6 @@ footer {
 }
 
 @media (min-width:546px) {
-    #land-page .card {
-        width: 50%;
-    }
 
     .progress {
         width: 60%;
