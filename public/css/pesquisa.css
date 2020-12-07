@@ -50,15 +50,16 @@ strong {
 }
 
 .answer-block {
-    background: #ccc;
     margin: 10px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 1rem;
-    padding: 5px 0;
 }
 
-.answer-block:hover {
-    background: chocolate;
+.answer-block label {
+    background: #ccc;
+    width: 70%;
+    border-radius: .2rem;
+    padding: 10px 5px;
+}
+
+.answer-block label:hover {
+    background: #cce;
 }
